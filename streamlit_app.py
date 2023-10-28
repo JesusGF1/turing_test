@@ -5,8 +5,10 @@ import torch
 
 @st.cache_resource
 def load_model():
-    model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium") 
-    tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+    #model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium") 
+    #tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+    model = AutoModelForCausalLM.from_pretrained("AIDynamics/DialoGPT-medium-MentorDealerGuy")
+    tokenizer = AutoTokenizer.from_pretrained("AIDynamics/DialoGPT-medium-MentorDealerGuy")
     return model, tokenizer
 
 def generate_response(prompt, chat_history_ids, model, tokenizer):
@@ -37,3 +39,6 @@ while i < 20:
             st.text_area("User:", output, height=100, key=f"{len(chat_history_ids)}b")
             st.empty()
     i += 1
+
+if st.button('Who was I speaking with?',key="Speaker"):
+    st.write("You were speaking with a chatbot")
