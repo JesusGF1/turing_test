@@ -5,10 +5,10 @@ import torch
 
 @st.cache_resource
 def load_model():
-    #model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium") 
-    #tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-    model = AutoModelForCausalLM.from_pretrained("AIDynamics/DialoGPT-medium-MentorDealerGuy")
-    tokenizer = AutoTokenizer.from_pretrained("AIDynamics/DialoGPT-medium-MentorDealerGuy")
+    model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium") 
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+    #model = AutoModelForCausalLM.from_pretrained("AIDynamics/DialoGPT-medium-MentorDealerGuy")
+    #tokenizer = AutoTokenizer.from_pretrained("AIDynamics/DialoGPT-medium-MentorDealerGuy")
     return model, tokenizer
 
 def generate_response(prompt, chat_history_ids, model, tokenizer):
