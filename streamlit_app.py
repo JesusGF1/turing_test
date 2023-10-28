@@ -31,7 +31,7 @@ st.write('However, if there are some of you running the app at the same time the
 model, tokenizer = load_model() 
 chat_history_ids = torch.zeros((1,1), dtype=torch.long)
 i = 0 
-while i < 20:
+while i < 10:
     user_input = st.text_input("You: ", "",key=str(i)) 
     if st.button('Send',key=str(i)+"a"):
         if user_input:
